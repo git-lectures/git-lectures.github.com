@@ -40,8 +40,9 @@
             
   <div class="section" id="git-and-github">
 <h1>Git and Github<a class="headerlink" href="#git-and-github" title="Permalink to this headline">¶</a></h1>
-<p>This tutorial was made for EuroScipy&#8216;13. Other tutorials can be found <a class="reference external" href="http://scipy-lectures.github.io">Scipy
-lecture notes</a>.</p>
+<p>This tutorial was made for EuroScipy&#8216;13. It is aimed at researchers, who don&#8217;t
+necessarily know version control. Other EuroScipy tutorials (python based
+tutorials) can be found <a class="reference external" href="http://scipy-lectures.github.io">here</a>.</p>
 <div class="section" id="why-do-i-need-version-control">
 <h2>Why do I need version control?<a class="headerlink" href="#why-do-i-need-version-control" title="Permalink to this headline">¶</a></h2>
 <p>As researchers, you (probably) want:</p>
@@ -61,20 +62,23 @@ lecture notes</a>.</p>
 <p class="caption">&#8220;Piled Higher and Deeper&#8221; by Jorge Cham: www.phdcomics.com</p>
 </div>
 <p>Version control systems allow to keep all the historical versions of your
-software, for easy tracking. It also benefits team collaboration, improves our
-efficiency. In addition, it can be used as a data center, making build
-automation possible.</p>
-<p>In this tutorial, we are going to learn the basics of Git and Github. Git is a
-distributed version control software (DCSV) and Github a git hosting platform.
-Other well-known DCVS are mercurial and bazaar.</p>
+software for easy tracking. It also benefits team collaboration and mproves
+our efficiency. In addition, it can be used as a data center, making build
+automation and continous integration possible.</p>
+<p>In this tutorial, we are going to learn the basics of Git and Github. First,
+what is Git? Git is a distributed version control software (DCSV). Github is a
+git hosting platform that provide free git repository for all opensource
+softwares. Other well-known DCVS are mercurial and bazaar, with their
+respective hosting platform, bitbucket (which now also supports git
+repository) and launchpad.</p>
 <p>Why did we choose to introduce git, and not mercurial, which is not only build
-with python, but has also been chosen by CPython to host their code. Well, it
-is quite easy: in the scientific world, git (and github) are much more widely
-used than mercurial (and bitbucket). A scholar.google search yields 14,100
-results for a &#8220;github&#8221; search, while a &#8220;bitbucket&#8221; search only returns 2,260
-results. If that&#8217;s not enough to be convinced, here is a table of python
-packages, divided in two list: the github hosted ones, and the bitbucket
-hosted ones.</p>
+with python, but has also been chosen by CPython (and many other python
+project) to host their code. That decision was quite straightforward: in the
+scientific world, git (and github) are much more widely used than mercurial
+(and bitbucket). A scholar.google search yields 14,100 results for a &#8220;github&#8221;
+search, while a &#8220;bitbucket&#8221; search only returns 2,260 results. If that&#8217;s not
+enough to be convinced, here is a table of python packages, divided in two
+list: the github hosted ones, and the bitbucket hosted ones.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="47%" />
@@ -112,14 +116,42 @@ hosted ones.</p>
 </tr>
 </tbody>
 </table>
+<p>Before we start learning git, please be aware that git is a very powerful
+tool. We will only introduce the basics of Git in this tutorial, and many
+things may seem obscure and you may (will?) struggle with the concepts.
+Yet, after a while using it, we get used to the rough edge, and start using
+more complex commands.</p>
+<p>The basic git workflow is:</p>
+<blockquote>
+<div><ul class="simple">
+<li>modify files in your working directory.</li>
+<li>stage files you&#8217;ve worked on. This prepares a snapshot of the directory</li>
+<li>commit the files you&#8217;ve staged. This stores that snapshot in the Git
+repository.</li>
+</ul>
+</div></blockquote>
 </div>
 <div class="section" id="initializing-repositories-and-configuring-git">
 <h2>Initializing repositories and configuring git<a class="headerlink" href="#initializing-repositories-and-configuring-git" title="Permalink to this headline">¶</a></h2>
-<p>In the project directory, initialize the git repository with:</p>
+<p>There are several way to initiliaze a git repository. The first is used to
+initialize git in an existing repository. The second is used to retrieve an
+existing repository.</p>
+<p>To initialize a new project, in the project directory, initialize the git
+repository with:</p>
 <div class="highlight-python"><pre>git init</pre>
 </div>
 <p>This will enable git to keep track of changes in this folder, and subfolders
 by creating a .git hidden folder containing the git skeleton.</p>
+<p>The second way is:</p>
+<div class="highlight-python"><pre>git clone https://github.com/git-lectures/git-lectures.github.com.git</pre>
+</div>
+<p>This will clone the repository containing the documents of this tutorial.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Each new repository should be in its own directory. One git
+repository should not be created or cloned in an existing git repository,
+ie a folder you&#8217;ve initialized a git repository and its subfolders.</p>
+</div>
 <p>Before continuing let&#8217;s configure git. You will have to do this once per
 computer you use:</p>
 <div class="highlight-python"><pre>git config --global
