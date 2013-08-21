@@ -116,12 +116,22 @@ computer you use::
   git config --global core.editor vim
   git config color.ui auto
 
-And you can check your configuration with::
+The ``--global`` option corresponds to a user-wide configuration. The
+configuration will be stored in a hidden repository in your home. You can also
+configure each git repository individually, by removing this option, or
+system-wide by replacing the ``--global`` option with ``--system``. Usually,
+we just configure repositories user-wide.
+
+You can check your configuration with::
 
   git config --list
 
+If you've configured git several times at different levels, you will probably
+see several entries twice or three times in the configuration list. The
+user-wide configuration overrides the system-wide configuration, and the local
+configuration overrides the user-wide configuration.
 
-Creating snapshots
+Creating snapshots: "committing"
 --------------------------------------------------------------------------------
 
 One of the main goal of version control is to save snapshots of your
@@ -139,7 +149,7 @@ First let's create some directories and files in our directory.
 
    touch README
 
-You now have a new file in the project folder. As mentionned before, git does
+You now have a new file in the project folder. As mentioned before, git does
 not track this file yet. First, you need to tell git this file exists::
 
   git add README
@@ -157,7 +167,7 @@ staged.
 
 .. figure:: images/git_file_status_lifecycle.png
 
-You can check the statuses of each file in your directory with the
+You can check the status of each file in your directory with the
 command ``git status``. This command will display all untracked files, and
 modified and staged files in your directory::
 
@@ -221,7 +231,8 @@ To do so, use ``git checkout <filename>``. If you run ``git status``, you can
 notice git reminds you what command to use for which action.
 
 
-Exercises:
+Exercises
+~~~~~~~~~~
 
   - Create a folder called GitTutorial
   - Inside it, initialize an empty git repository (``git init``)
@@ -397,7 +408,8 @@ You can checkout the remote branches, but you should never (never ever
 ever!!!) work in those branches.
 
 
-Exercises:
+Exercises
+~~~~~~~~~~
 
   - Create a github account.
   - Create a git project. **Do not add a readme file, a .gitignore file, or

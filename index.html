@@ -160,12 +160,21 @@ git config --global user.email you@yourdomain.com``
 git config --global core.editor vim
 git config color.ui auto</pre>
 </div>
-<p>And you can check your configuration with:</p>
+<p>The <tt class="docutils literal"><span class="pre">--global</span></tt> option corresponds to a user-wide configuration. The
+configuration will be stored in a hidden repository in your home. You can also
+configure each git repository individually, by removing this option, or
+system-wide by replacing the <tt class="docutils literal"><span class="pre">--global</span></tt> option with <tt class="docutils literal"><span class="pre">--system</span></tt>. Usually,
+we just configure repositories user-wide.</p>
+<p>You can check your configuration with:</p>
 <div class="highlight-python"><pre>git config --list</pre>
 </div>
+<p>If you&#8217;ve configured git several times at different levels, you will probably
+see several entries twice or three times in the configuration list. The
+user-wide configuration overrides the system-wide configuration, and the local
+configuration overrides the user-wide configuration.</p>
 </div>
-<div class="section" id="creating-snapshots">
-<h2>Creating snapshots<a class="headerlink" href="#creating-snapshots" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creating-snapshots-committing">
+<h2>Creating snapshots: &#8220;committing&#8221;<a class="headerlink" href="#creating-snapshots-committing" title="Permalink to this headline">¶</a></h2>
 <p>One of the main goal of version control is to save snapshots of your
 directory. We call those snapshots commits. To each snapshot is associated
 some metadata: the date the snapshot was taken, who took it, what files where
@@ -178,7 +187,7 @@ First let&#8217;s create some directories and files in our directory.</p>
 <div class="highlight-bash"><div class="highlight"><pre>touch README
 <div class="newline"></div></pre></div>
 </div>
-<p>You now have a new file in the project folder. As mentionned before, git does
+<p>You now have a new file in the project folder. As mentioned before, git does
 not track this file yet. First, you need to tell git this file exists:</p>
 <div class="highlight-python"><pre>git add README</pre>
 </div>
@@ -193,7 +202,7 @@ staged.</p>
 <div class="figure">
 <img alt="_images/git_file_status_lifecycle.png" src="_images/git_file_status_lifecycle.png" />
 </div>
-<p>You can check the statuses of each file in your directory with the
+<p>You can check the status of each file in your directory with the
 command <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt>. This command will display all untracked files, and
 modified and staged files in your directory:</p>
 <div class="highlight-python"><pre>touch AUTHORS
@@ -242,7 +251,8 @@ on.</p>
 <p>In the second case, you&#8217;ve modified a file and you want to cancel the changes.
 To do so, use <tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;filename&gt;</span></tt>. If you run <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt>, you can
 notice git reminds you what command to use for which action.</p>
-<p>Exercises:</p>
+<div class="section" id="exercises">
+<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Create a folder called GitTutorial</li>
@@ -257,6 +267,7 @@ notice git reminds you what command to use for which action.</p>
 <li>Cancel the changes you&#8217;ve made to this file.</li>
 </ul>
 </div></blockquote>
+</div>
 </div>
 <div class="section" id="working-with-a-distant-repository-with-github">
 <h2>Working with a distant repository with github<a class="headerlink" href="#working-with-a-distant-repository-with-github" title="Permalink to this headline">¶</a></h2>
@@ -393,7 +404,8 @@ into <tt class="docutils literal"><span class="pre">origin/master</span></tt>, y
 </div>
 <p>You can checkout the remote branches, but you should never (never ever
 ever!!!) work in those branches.</p>
-<p>Exercises:</p>
+<div class="section" id="id5">
+<h3>Exercises<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Create a github account.</li>
@@ -412,6 +424,7 @@ branch should appear in the github interface.</li>
 </ul>
 </div></blockquote>
 <p><div style="clear: both"></div></p>
+</div>
 </div>
 </div>
 
