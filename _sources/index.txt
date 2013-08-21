@@ -2,6 +2,9 @@
 Git and Github
 ================================================================================
 
+This tutorial was made for EuroScipy'13. Other tutorials can be found `Scipy
+lecture notes <http://scipy-lectures.github.io>`_
+
 
 Why do I need version control ?
 --------------------------------------------------------------------------------
