@@ -99,7 +99,7 @@ by creating a .git hidden folder containing the git skeleton.
 
 The second way is::
 
-  git clone https://github.com/git-lectures/git-lectures.github.com.git
+  git clone https://github.com/git-lectures/git-lecture-notes.git
 
 This will clone the repository containing the documents of this tutorial.
 
