@@ -108,9 +108,8 @@ This will clone the repository containing the documents of this tutorial.
    ie a folder you've initialized a git repository and its subfolders.
 
 Before continuing let's configure git. You will have to do this once per
-computer you use::
+computer you use ``git config --global``::
 
-  git config --global
   git config --global user.name "Your Name Comes Here"
   git config --global user.email you@yourdomain.com``
   git config --global core.editor vim
