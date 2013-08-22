@@ -240,9 +240,14 @@ Exercises
   - Check the status of the repository (``git status``)
   - Add the two other files to the staging area (``git add``)
   - Commit your changes (``git commit``).
-  - Now rename the AUTHORS file to CONTRIBUTORS (``git mv``)
+  - Now rename the AUTHORS file to CONTRIBUTORS (``git mv``) and commit.
   - Add your name to the CONTRIBUTORS file.
-  - Cancel the changes you've made to this file.
+  - Cancel the changes you've made to this file. Tips: look at what ``git
+    status`` tells you to do.
+  - Create a ``src`` directory, and add a python script that prints the first
+    10 integers of the Fibonacci suite. Add and commit this script.
+  - Remove this file using ``git rm`` (but don't commit it).
+  - Try cancelling those changes. What's happening?
 
 
 Working with a distant repository with github
