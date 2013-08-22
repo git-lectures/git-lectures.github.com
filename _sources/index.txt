@@ -423,3 +423,26 @@ Exercises
   - Push this branch on the github repository:: ``git push origin fix``. This
     branch should appear in the github interface.
   - Now merge the changes back to your master branch.
+
+
+Setting up a remote directory
+================================================================================
+
+In 3 commands:
+on the server, create a directory which is going to contain the git
+repository::
+
+  mkdir my_directory.git
+
+You then need to initialize the git repository with specific options::
+
+  git init --bare --shared
+
+You can now clone the repository from your local machine::
+
+  git clone user@server:my_directory.git
+
+  - ``git clone --bare --shared my_project my_project.git``
+  - ``scp -r my_project.git user@git.example.com:/opt/git``
+  - ``git clone user@git.example.com:/opt/git/my_project``
+

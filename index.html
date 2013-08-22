@@ -422,7 +422,25 @@ branch should appear in the github interface.</li>
 <li>Now merge the changes back to your master branch.</li>
 </ul>
 </div></blockquote>
+<div class="section" id="setting-up-a-remote-directory">
+<h4>Setting up a remote directory<a class="headerlink" href="#setting-up-a-remote-directory" title="Permalink to this headline">¶</a></h4>
+<p>In 3 commands:
+on the server, create a directory which is going to contain the git
+repository:</p>
+<div class="highlight-python"><pre>mkdir my_directory.git</pre>
+</div>
+<p>You then need to initialize the git repository with specific options:</p>
+<div class="highlight-python"><pre>git init --bare --shared</pre>
+</div>
+<p>You can now clone the repository from your local machine:</p>
+<div class="highlight-python"><pre>git clone user@server:my_directory.git
+
+- ``git clone --bare --shared my_project my_project.git``
+- ``scp -r my_project.git user@git.example.com:/opt/git``
+- ``git clone user@git.example.com:/opt/git/my_project``</pre>
+</div>
 <p><div style="clear: both"></div></p>
+</div>
 </div>
 </div>
 </div>
