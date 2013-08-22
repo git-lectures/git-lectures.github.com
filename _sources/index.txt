@@ -130,7 +130,7 @@ see several entries twice or three times in the configuration list. The
 user-wide configuration overrides the system-wide configuration, and the local
 configuration overrides the user-wide configuration.
 
-Creating snapshots: "committing"
+Working locally
 --------------------------------------------------------------------------------
 
 One of the main goal of version control is to save snapshots of your
